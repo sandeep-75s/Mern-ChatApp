@@ -97,6 +97,7 @@ const SideDrawer = () => {
       setSelectedChat(data);
       setLoading(false);
       // onclose(); /// yaha pe sir se different hai
+      document.getElementById("closeModalButton").click();
     } catch (e) {
       toast.error("Fetching issue the chat");
     }
@@ -156,7 +157,7 @@ const SideDrawer = () => {
               </DrawerBody>
               <DrawerFooter>
                 <DrawerActionTrigger asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button id="closeModalButton" variant="outline">Cancel</Button>
                 </DrawerActionTrigger>
               </DrawerFooter>
               <DrawerCloseTrigger />
