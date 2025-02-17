@@ -7,7 +7,10 @@ import toast from 'react-hot-toast'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 function Login() {
-    const BASE_URL =   `http://localhost:5000`;
+    const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://your-backend-deployed-url.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
     const navigate = useNavigate()
     const [email , setEmail] = useState();
     const [password , setPassword] = useState();
