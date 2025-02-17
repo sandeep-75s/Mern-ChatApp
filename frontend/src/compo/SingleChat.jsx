@@ -25,7 +25,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [showTyping, setShowTyping] = useState(false);
 
 
-  const BASE_URL = `http://localhost:5000`;
+  const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
   const sendMessage = async (event) => {
     if ((event.key === "Enter" || event.type === "click") && newMessage) {
       socket.emit('stop typing',selectedChat._id);

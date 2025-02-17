@@ -8,7 +8,10 @@ import { useNavigate } from "react-router-dom";
 // const {cloudinaryConnect} = require("../../config/cloudinary")
 function SignUp() {
   
-  const BASE_URL =   `http://localhost:5000`;
+  const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
     // cloudinaryConnect()
     const navigate = useNavigate();
     const [name , setName] = useState();

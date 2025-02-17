@@ -30,7 +30,10 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain , fetchMessages }) => 
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [renameLoading, setRenameLoading] = useState(false);
-  const BASE_URL = `http://localhost:5000`;
+  const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
 
 
 

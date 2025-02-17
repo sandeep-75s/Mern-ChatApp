@@ -12,7 +12,10 @@ import GroupChatModal from './GroupChatModal';
 const MyChats = ({fetchAgain}) => {
   const [loggedUser, setLoggedUser] = useState();
   const { user, selectedChat, setSelectedChat, chats, setChats } = ChatState();
-  const BASE_URL = `http://localhost:5000`;
+  const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
   console.log(GroupChatModal);
   const fetchChats = async () => {
     try {

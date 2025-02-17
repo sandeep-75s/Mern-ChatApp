@@ -27,7 +27,10 @@ const GroupChatModal = ({ children, fetchChats }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user, chats, setChats, setSelectedChat} = ChatState();
-  const BASE_URL = `http://localhost:5000`;
+  const BASE_URL =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
 
   const handleSearch = async (query) => {
     setSearch(query);
