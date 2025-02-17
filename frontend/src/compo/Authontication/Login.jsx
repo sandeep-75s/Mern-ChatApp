@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 function Login() {
     const BASE_URL =
     process.env.NODE_ENV === "production"
-    ? "https://your-backend-deployed-url.com"  // Replace with your deployed backend URL
+    ? "https://chatconnect-in5b.onrender.com/"  // Replace with your deployed backend URL
     : "http://localhost:5000";
     const navigate = useNavigate()
     const [email , setEmail] = useState();
