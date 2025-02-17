@@ -21,11 +21,12 @@
     "react-scripts": "5.0.1",
     "react-tooltip": "^5.28.0",
     "socket.io-client": "^4.8.1",
+    "talk-a-tive": "file:..",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

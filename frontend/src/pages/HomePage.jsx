@@ -35,7 +35,7 @@ const HomePage = () => {
           fontSize="4xl"
           color="black"
         >
-          Talk-a-Tive
+          ChatConnect
         </Text>
       </Box>
       <Box bg={"white"} w="100%" p={4} borderRadius="lg" borderWidth="1px">
