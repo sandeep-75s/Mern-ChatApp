@@ -26,7 +26,7 @@ const GroupChatModal = ({ children, fetchChats }) => {
   const [search, setSearch] = useState();
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { user, chats, setChats } = ChatState();
+  const { user, chats, setChats, setSelectedChat} = ChatState();
   const BASE_URL = `http://localhost:5000`;
 
   const handleSearch = async (query) => {
@@ -96,6 +96,9 @@ const GroupChatModal = ({ children, fetchChats }) => {
       setSelectedUsers([]);  // Clear previous selected users
       setSearch("");         // Clear search input
       setSearchResult([]);
+      setSelectedChat(data?.fullGroupChat)
+      console.log(data,"Main hu data")
+      document.getElementById("closeModalButton").click();
       
       
     } catch (e) {
@@ -149,7 +152,7 @@ const GroupChatModal = ({ children, fetchChats }) => {
                 type="text"
                 placeholder="Enter User Name"
                 onChange={(e) => handleSearch(e.target.value)}
-                value={selectedUsers}
+                
               />
             </Field>
 
@@ -192,6 +195,7 @@ const GroupChatModal = ({ children, fetchChats }) => {
                 bg="white.400"
                 color="black"
                 _hover={{ bg: "gray.200" }}
+                id="closeModalButton"
               >
                 Cancel
               </Button>

@@ -86,8 +86,6 @@ const MyChats = ({fetchAgain}) => {
         {chats ? (
           <Stack overflow="scroll">
             {chats.map((chat) => {
-              console.log("Chat Object:", chat); // Debugging Log
-              console.log("Chat Users:", chat.users); // Check if users exist
 
               return (
                 <Box
