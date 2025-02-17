@@ -11,7 +11,10 @@ import toast from "react-hot-toast";
 import "./style.css";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client"
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT =
+    process.env.NODE_ENV === "production"
+    ? "https://chatconnect-in5b.onrender.com"  // Replace with your deployed backend URL
+    : "http://localhost:5000";
 var socket , selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
